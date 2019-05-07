@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="http://stemwijzer.dvc-icta.nl/data.js"></script>		
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">	
+	<link rel="stylesheet" type="text/css" href="style/style.css">
+	<title>Stemwijzer</title>
+</head>
+<body onload="loadIntro()">
+	<div id="background"></div>
+	<section>
+		<button id="back-btn" onclick="back()"><i class="fas fa-long-arrow-alt-left"></i></button>
+		<div id="intro">
+			<img id="title-img" src="./img/titel.png">
+			<button class="btn" onclick="loadStatements()">Start</button>
+		</div>
+
+		<div id="statements">
+			<h2 id="statement-title"></h2>
+			<p id="statement"></p>		
+			<button class="btn" id="pro" onclick="setChoice('pro')">Eens</button>
+			<button class="btn" id="ambivalent" onclick="setChoice('ambivalent')">Geen van beide</button>
+			<button class="btn" id="contra" onclick="setChoice('contra')">oneens</button>
+			<button id="skip-btn" onclick="setChoice('')">Sla deze vraag over <i class="fas fa-long-arrow-alt-right"></i></button>
+		</div>
+
+		<div id="chooseStatements">
+			<h2>Zijn er onderwerpen die u extra belangrijk vindt?</h2>
+			<p>Aangevinkte stellingen tellen extra mee bij het berekenen van het resulaat.</p>
+			<ul id="statements-ul"></ul>
+			<button class="btn" onclick="loadChooseParties()">Ga verder</button>
+		</div>
+
+		<div id="chooseParties">
+			<h2>Welke partijen wilt u meenemen in het resultaat?</h2>
+			<ul id="parties-ul">
+				<input type="radio" name="filter_choice" class="filter_choice">Alle grote partijen</input>
+				<input type="radio" name="filter_choice" class="filter_choice">Alle seculiere partijen</input>
+				<input type="radio" name="filter_choice" class="filter_choice" checked>Alle partijen</input>
+			</ul>
+			<button class="btn" onclick="loadScore()">Naar Resultaat</button>
+		</div>	
+
+		<div id="score"></div>		
+	</section>
+	<script src="http://stemwijzer.dvc-icta.nl/data.js"></script>
+	<script src="js/logic.js"></script>
+</body>
+</html>
+
+
